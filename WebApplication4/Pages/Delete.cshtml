@@ -1,0 +1,38 @@
+﻿@page
+@model WebApplication4.Pages.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удаление</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Название
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Руководитель
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.OwnerName)
+        </dd>
+        <dt class="col-sm-2">
+            Количество работников
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.WorkerCount)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Company.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад</a>
+    </form>
+</div>

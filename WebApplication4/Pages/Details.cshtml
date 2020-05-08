@@ -1,0 +1,36 @@
+﻿@page
+@model WebApplication4.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Название
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Руководитель
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.OwnerName)
+        </dd>
+        <dt class="col-sm-2">
+            Количество работников
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.WorkerCount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Company.ID">Редактировать</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

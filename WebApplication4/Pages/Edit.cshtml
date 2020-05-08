@@ -1,0 +1,44 @@
+﻿@page
+@model WebApplication4.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Редактировать";
+}
+
+<h1>Редактирование</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Company.ID" />
+            <div class="form-group">
+                <label asp-for="Company.Name" class="control-label">Название</label>
+                <input asp-for="Company.Name" class="form-control" />
+                <span asp-validation-for="Company.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.OwnerName" class="control-label">Руководитель</label>
+                <input asp-for="Company.OwnerName" class="form-control" />
+                <span asp-validation-for="Company.OwnerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.WorkerCount" class="control-label">Количество работников</label>
+                <input asp-for="Company.WorkerCount" class="form-control" />
+                <span asp-validation-for="Company.WorkerCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
